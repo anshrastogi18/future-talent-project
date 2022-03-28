@@ -1,0 +1,12 @@
+sent_tokens[0:2]
+
+word_tokens[0:2]
+word_tokens[0:10]
+
+lemmer = nltk.stem.WordNetLemmatizer()
+#WordNet is a semantically-oriented dictionary of English included in NLTK.
+def LemTokens(tokens):
+  return [lemmer.WordNetLemmatize(token) for token in tokens]
+remove_punct_dict = dict((ord(punct), None) for punct in string.punctuation)
+def LemNormalize(text):
+  return LemTokens(nltk.word_tokenize(text.lower().translate(remove_punct_dict)))
