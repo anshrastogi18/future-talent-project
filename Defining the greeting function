@@ -1,0 +1,6 @@
+GREET_INPUTS = ("hello", "hi", "greetings", "sup", "what's up", "hey") 
+GREET_RESPONSES = ["hi", "hey", "nods*", "hi there", "hello", "I am glad! You are talking to me"]
+def greet(sentence):
+  for word in sentence.split():
+    if word.lower() in GREET_INPUTS:
+     return random.choice (GREET_RESPONSES)
